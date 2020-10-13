@@ -1,0 +1,23 @@
+﻿
+
+body{
+    background-color: #e0e0e0;
+}
+
+h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-family: Calibri;
+    font-size: 2em;
+}
+
+#LinkId {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-30%) translateY(-30%);
+    text-align: center;
+}

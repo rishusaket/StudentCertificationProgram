@@ -1,0 +1,23 @@
+﻿@using StudentCertificationProgram.CustomHelper
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/Disable.js" type="text/javascript"></script>
+<link href="~/Content/DisablingElement.css" rel="stylesheet" />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Steps for Registration</h4>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" id="info">@Html.ActionLink("INFO", "ApplicantInfo", "Applicant")</li>
+
+            <li class="list-group-item"> @Html.htmlString("/Address/AddressInfo", (int?)Session["studentId"],"ADDRESS") </li>
+            @*<li class="list-group-item" id="address">@Html.ActionLink("ADDRESS", "AddressInfo", "Address")</li>*@
+
+            <li class="list-group-item" id="education">@Html.htmlString("/Qualification/QualificationInfo", (int?)Session["studentAddressId"],"EDCATION")</li>
+            @*@Html.ActionLink("EDUCATION", "QualificationInfo", "Qualification")*@
+        </ul>
+    </div>
+</div>

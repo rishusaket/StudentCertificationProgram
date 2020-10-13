@@ -1,0 +1,48 @@
+﻿@model StudentCertification_Entities.StudentAddressInfo
+
+    <div class="panel panel-body">
+        <div class="col-md-3">
+            @{Html.RenderPartial("NavigationPartialView");}
+        </div>
+        <script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/StudentAddressValidation.js" type="text/javascript"></script>
+        <div class="col-md-9">
+            @using (Html.BeginForm("AddressInfo", "Address", FormMethod.Post, new { @id = "" }))
+            {
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.studentAddress, "Full Address:", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.studentAddress, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.studentAddress, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.city, "City", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.state, "State:", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Next Form" class="btn btn-default" id="Formsubmit" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
